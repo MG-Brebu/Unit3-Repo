@@ -7,7 +7,7 @@ public class PlayerControllerX : MonoBehaviour
     public bool gameOver;
 
     public float floatForce;
-    private float gravityModifier = 1.5f;
+    private float gravityModifier = 1.0f;
     private Rigidbody playerRb;
 
     public ParticleSystem explosionParticle;
