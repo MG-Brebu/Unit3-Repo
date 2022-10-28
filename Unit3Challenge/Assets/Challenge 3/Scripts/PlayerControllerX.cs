@@ -7,7 +7,7 @@ public class PlayerControllerX : MonoBehaviour
     public bool gameOver;
 
     public float floatForce;
-    private float gravityModifier = 1.0f;
+    private float gravityModifier = 1.5f;
     private Rigidbody playerRb;
 
     public ParticleSystem explosionParticle;
@@ -41,7 +41,7 @@ public class PlayerControllerX : MonoBehaviour
             playerRb.AddForce(Vector3.up * floatForce);
         }
 
-        if (transform.position.y > 13)
+        if (transform.position.y > 15)
         {
             isLowEnough = false;
         } else
@@ -74,7 +74,7 @@ public class PlayerControllerX : MonoBehaviour
         // if player collides with ground, moves balloon upwards
         else if (other.gameObject.CompareTag("Ground") && !gameOver)
         {
-            playerRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * 5, ForceMode.Impulse);
             playerAudio.PlayOneShot(bounceSound, 1.5f);
         }
 
